@@ -1,6 +1,9 @@
+//Variaveis com as jogadas
 let playerMove = undefined;
 let computerMove = undefined;
 const verify = ["rock", "paper", "scissors"];
+
+//Variaveis com resultados
 let result;
 let resultPlayer = 0;
 let resultCPU = 0;
@@ -12,12 +15,8 @@ function computerPlay(){
     return computerMove;
 }
 
+//Função principal do jogo
 function game(){
-
-
-
-
-
 //Função para pedir jogada à pessoa
 function playerSelection() {
     playerMove = prompt("Rock, Paper or scissors?");
@@ -25,9 +24,9 @@ function playerSelection() {
 }
 
 playerSelection();
-
 console.log(playerMove);
 
+//Loop condicional para verificar o vencedor
 if(playerMove == computerMove) {
     console.log("It's a tie!")
 } if (playerMove == "rock" && computerMove=="paper") {
@@ -52,13 +51,16 @@ if(playerMove == computerMove) {
     console.log("no way");
 }
 
-
 }
+
+//Loop para 5 rondas de jogo
 for (let i = 0; i < 5; i++) {
     computerPlay();
     console.log(computerMove);
     game();
 }
+
+//Resultados finais
 if(resultPlayer > resultCPU) {
     result= resultPlayer-resultCPU;
     console.log("Player: " + resultPlayer + " CPU: " + resultCPU);
